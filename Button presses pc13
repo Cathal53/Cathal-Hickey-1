@@ -1,0 +1,21 @@
+#include "mbed.h"
+
+InterruptIn button(PC_13);
+
+int press_count = 0;
+
+void button_pressed()
+{
+    press_count++;
+    printf("Total number of button presses: %d
+", press_count);
+}
+
+int main()
+{
+    button.rise(&button_pressed);
+
+    while(1) {
+        // Do nothing
+    }
+}
